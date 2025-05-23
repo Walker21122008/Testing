@@ -5,5 +5,6 @@ public class CPTJason {
 		Console con = new Console (); 
 		
 		con.println("Heloo"); 
+		con.println("efub"); 
 	}
 }

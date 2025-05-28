@@ -1,3 +1,3 @@
 # JasonGuan-afk-Cpt
 
-Hello I am hatsune miku UWU
+I dont want to code :< 

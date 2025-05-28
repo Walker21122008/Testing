@@ -24,7 +24,7 @@ public class CPTJason {
 		if(userInput.equalsIgnoreCase("p")){
 			con.println("Enter your username");
 			String userName = con.readLine();
-			
+		
 		}else if(userInput.equalsIgnoreCase("V")){
 			//make some method for high scores
 			
@@ -35,6 +35,7 @@ public class CPTJason {
 			con.println("exiting...");
 		}
 		
+		if (userInput.equalsignoreCase("statitan"); 
 		
 	}
 }

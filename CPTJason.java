@@ -14,28 +14,62 @@ public class CPTJason {
 		// Additional: Console window is 1280 by 720 
 		
 		//Declare Variables 
-		
+		String [] Quizoptions = new String [3]; 
+		String strPlayerName; 
+		int inttotalquestions; 
+		int intplayerscore; 
+		Double dblTotalScore; 
+		int Quizchoice; 
+		String strQuizName; 
 		
 		con.println("Calc and Vectors Multiple choice game");
 		con.println("Press P to play game");
 		con.println("Press V to view High Scores");
 		con.println("Press H for help options");
-		String userInput = con.readLine();
-		if(userInput.equalsIgnoreCase("p")){
-			con.println("Enter your username");
-			String userName = con.readLine();
+		con.println("Press Q to exit"); 
 		
-		}else if(userInput.equalsIgnoreCase("V")){
-			//make some method for high scores
+		while (userInput.notequalsIgnoreCase("q"){	
+			String userInput = con.readLine();
+			if(userInput.equalsIgnoreCase("p")){
+				intplayerscore = 0; 
+				con.println("Enter your username");
+				strPlayerName = "";
+				while (strPlayerName.equals("")) {
+					con.print("Please input your name: ");
+					strPlayerName = con.readLine();
+					if (strPlayerName.equals("")){
+					con.println("Player's name cannot be blank.");
+					}
+				}
+			//Titan boost 
+			if (strPlayerName.equals("statitan")) {
+				intplayerscore = 2;
+				System.out.println("Enabled cheat. Score is = " + intplayerscore);
+			}
+			dblTotalScore = 0.0;		
+			intQuizchoice = 0; 
+			//Show Quiz Choices 
+			TextInputFile Menu = new TextInputFile("Quizchoice.txt");
+			while(Menu.eof() == false){
+				strQuizName[intQuizchoice] = Menu.readLine();
+				//String((intQuizCount + 1) + ": " + strQuizName[intQuizchoice];
+				//intQuizchoice += 1;				
+			}
+			Menu.close(); 
 			
-		}else if(userInput.equalsIgnoreCase("H")){
-			//help screen menu
+		
+			}else if(userInput.equalsIgnoreCase("V")){
+				//make some method for high scores
 			
-		}else{
-			con.println("exiting...");
+			}else if(userInput.equalsIgnoreCase("H")){
+				//help screen menu
+			
+			}else{
+				con.println("exiting...");
+			}
+		
+
+			
 		}
-		
-		if (userInput.equalsignoreCase("statitan"); 
-		
 	}
 }

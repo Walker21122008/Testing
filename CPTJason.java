@@ -24,6 +24,12 @@ public class CPTJason {
 		int Quizchoice; 
 		String strQuizName; 
 		String userInput=""; 
+		String StrQuestion;
+		String StrAnswerA; 
+		String StrAnswerB; 
+		String StrAnswerC; 
+		String StrAnswerD; 
+		String StrCorrect; 
 		
 		//Load all images 
 		BufferedImage imgHomePageBKG = con.loadImage("Homepage.png");
@@ -42,6 +48,8 @@ public class CPTJason {
 		con.println("Press H for help options");
 		con.println("Press Q to exit"); 
 		
+		loadImage(imgHomePageBKG);
+
 		while (!userInput.equalsIgnoreCase("q")){	
 			userInput = con.readLine();
 			if(userInput.equalsIgnoreCase("p")){
@@ -78,7 +86,31 @@ public class CPTJason {
 			}
 			SelecMenu.close(); 
 			
-		
+			//Read the files
+			TextInputFile Calctest = new TextInputFile("Calc.txt");  
+			TextInputFile Vectorstest = new TextInputFile("vectors.txt"); 
+		    TextInputFile Bothtest = new TextInputFile("Both.txt"); 
+		 
+		 if (intQuizchoice = 1){ 
+			 intQuizchoice = Calctest; 
+			 
+		 }else if (intQuizchoice = 2){ 
+			 intQuizchoice = Vectorstest; 
+			 
+		 }else if (intQuizchoice = 3){ 
+			  intQuizchoice = Bothtest; 
+			  
+		  }
+			  
+			while(Vectorstest.eof() == false){ //while not at end of file
+			StrQuestion = intQuizchoice.readLine();
+			StrAnswerA = intQuizchoice.readSLine();
+			StrAnswerB = intQuizchoice.readLine();
+			StrAnswerC = intQuizchoice.readLine();
+			StrAnswerD = intQuizchoice.readLine();
+			StrCorrect = intQuizchoice.readLine();
+		} 
+		 
 			}else if(userInput.equalsIgnoreCase("V")){
 				//make some method for high scores
 			

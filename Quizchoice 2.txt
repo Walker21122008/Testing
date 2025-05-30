@@ -1,0 +1,10 @@
+"What is the magnitude of vector v = 3i + 4j",5,7,25,1,A
+"If a = 2i + 3j and b = -i + 4j what is a + b?",i + 7j,3i + 7j,-i + 7j,i + j,A
+"What is the magnitude of vector v = 6i + 8j",10,14,8,12,A
+"If c = 5i - 3j and d = -2i + 6j what is c + d?",3i + 3j,-i + 3j,7i + 3j,3i - 3j,A
+"What is the magnitude of vector v = 9i + 12j",15,20,10,25,A
+"If e = 7i + 4j and f = -3i + 2j what is e + f?",4i + 6j,5i + 6j,4i + 2j,5i + 2j,A
+"What is the magnitude of vector v = 12i + 16j",18,20,14,24,A
+"If g = 10i - 5j and h = -4i + 9j what is g + h?",6i + 4j,6i + 14j,-6i + 4j,14i - 4j,A
+"What is the magnitude of vector v = 15i + 20j",25,30,20,35,A
+"If i = 3i + 6j and j = -2i + 7j what is i + j?",i + 13j,i + j,-i + 13j,i + 7j,A

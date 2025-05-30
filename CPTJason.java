@@ -1,4 +1,6 @@
 import arc.*; 
+import java.awt.*;
+import java.awt.image.*;
 
 public class CPTJason { 
 	public static void main (String[]args){
@@ -21,15 +23,27 @@ public class CPTJason {
 		Double dblTotalScore; 
 		int Quizchoice; 
 		String strQuizName; 
+		String userInput=""; 
 		
+		//Load all images 
+		BufferedImage imgHomePageBKG = con.loadImage("Homepage.png");
+		BufferedImage imgStartBKG = con.loadImage("Start.png");
+		BufferedImage imgGame1BKG = con.loadImage("Choice1.png");	
+		BufferedImage imgGame2BKG = con.loadImage("Choice2.png");	
+		BufferedImage imgGame3BKG = con.loadImage("Choice3.png");	
+		BufferedImage imgWinBKG = con.loadImage("Win.png");		
+		BufferedImage imgLoseBKG = con.loadImage("Lose.png");		
+		BufferedImage imgScoreBKG = con.loadImage("Score.jpg");		
+		BufferedImage imgHelpBKG = con.loadImage("Help.png");	
+
 		con.println("Calc and Vectors Multiple choice game");
 		con.println("Press P to play game");
 		con.println("Press V to view High Scores");
 		con.println("Press H for help options");
 		con.println("Press Q to exit"); 
 		
-		while (userInput.notequalsIgnoreCase("q"){	
-			String userInput = con.readLine();
+		while (!userInput.equalsIgnoreCase("q")){	
+			userInput = con.readLine();
 			if(userInput.equalsIgnoreCase("p")){
 				intplayerscore = 0; 
 				con.println("Enter your username");
@@ -47,15 +61,22 @@ public class CPTJason {
 				System.out.println("Enabled cheat. Score is = " + intplayerscore);
 			}
 			dblTotalScore = 0.0;		
-			intQuizchoice = 0; 
+			int intQuizchoice = 0; 
 			//Show Quiz Choices 
-			TextInputFile Menu = new TextInputFile("Quizchoice.txt");
-			while(Menu.eof() == false){
-				strQuizName[intQuizchoice] = Menu.readLine();
+			//String strQuizName[];
+		
+			//intQuizchoice = CountTxtLine("Quizchoice.txt");
+			String strQuizNames[]; 
+			strQuizNames = new String[3];
+			System.out.println("No. of Quizzes: " + intQuizchoice);
+			
+			TextInputFile SelecMenu = new TextInputFile("Quizchoice.txt");
+			while(SelecMenu.eof() == false){
+				strQuizNames[intQuizchoice] = SelecMenu.readLine();
 				//String((intQuizCount + 1) + ": " + strQuizName[intQuizchoice];
-				//intQuizchoice += 1;				
+				intQuizchoice += 1;				
 			}
-			Menu.close(); 
+			SelecMenu.close(); 
 			
 		
 			}else if(userInput.equalsIgnoreCase("V")){
@@ -73,3 +94,4 @@ public class CPTJason {
 		}
 	}
 }
+

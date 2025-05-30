@@ -4,133 +4,114 @@ What is the derivative of y = 4x^3 + 2x^2 - 5x + 7
 8x^2 + 2x - 5
 12x^2 - 4x - 5
 A
-
 Find the derivative of y = x^4 - 3x^2 + 6x
 4x^3 - 6x + 6
 4x^3 - 6x - 6
 4x^3 + 6x + 6
 3x^2 - 6x + 6
 A
-
 Let y = (x - 2)(x + 3). Find dy/dx
 2x + 1
 2x - 1
 2x + 5
 x^2 + x - 6
 A
-
 Let f(x) = (2x + 1)(x - 4). What is f'(x)?
 2x - 7
 4x - 3
 3x - 2
 4x - 7
 D
-
 Let y = (x + 1)^2. Find dy/dx
 2(x + 1)
 2x + 1
 x^2 + 1
 (x + 1)^2
 A
-
 Find the derivative of y = (x^2 + 3)(x - 5)
 3x^2 - 10x + 3
 2x(x - 5) + (x^2 + 3)(1)
 2x(x - 5) + x^2 + 3
 2x(x + 3) + (x^2 - 5)(1)
 C
-
 Let y = (x + 1)(x - 1). What is dy/dx?
 2x
 1
 x^2 + 1
 2
 A
-
 What is the derivative of y = x^3 - 6x^2 + 9x - 4
 3x^2 - 12x + 9
 3x^2 + 6x + 9
 x^2 - 6x + 9
 3x^2 - 6x + 9
 A
-
 Let f(x) = (x - 5)^2. Find f'(x)
 2(x - 5)
 2x - 5
 x^2 - 25
 (x - 5)^2
 A
-
 Let y = (x^2 - 1)(x + 2). Find dy/dx
 2x(x + 2) + (x^2 - 1)(1)
 2x(x - 2) + 1
 3x^2 + 2x - 1
 2x + 1
 A
-
 Find the derivative of y = 5x^4 - 2x^3 + x - 9
 20x^3 - 6x^2 + 1
 20x^3 + 6x^2 + 1
 5x^3 - 6x^2 + 1
 10x^3 - 2x + 1
 A
-
 Let f(x) = (x + 4)(x - 4). What is f'(x)?
 2x
 4x
 x^2 + 4
 8
 A
-
 What is the derivative of y = 3x^2 - x + 7
 6x - 1
 6x + 1
 3x - 1
 6x
 A
-
 Let y = (x^2 + 1)(x - 3). Find dy/dx
 2x(x - 3) + (x^2 + 1)(1)
 2x - 3
 2x(x - 1)
 2x + 3
 A
-
 Find the derivative of y = (2x - 1)(x + 5)
 2x + 9
 2x - 1
 4x + 9
 2x + 5
 A
-
 Let y = (x - 2)^2. What is dy/dx?
 2(x - 2)
 2x - 2
 x^2 - 4
 (x - 2)^2
 A
-
 What is the derivative of y = x^5 - x^3 + x
 5x^4 - 3x^2 + 1
 5x^4 + 3x^2 + 1
 5x^3 - 3x^2 + 1
 5x^3 - 3x^2 - 1
 A
-
 Let y = (x + 2)^2. Find dy/dx
 2(x + 2)
 2x + 2
 x^2 + 2
 (x + 2)^2
 A
-
 Find the derivative of y = (x - 1)(x^2 + 2)
 (x - 1)(2x) + (x^2 + 2)(1)
 2x + 1
 x^2 + 1
 x^2 - 1
 A
-
 Let f(x) = (x - 1)(x + 2). Find f'(0)
 1
 2

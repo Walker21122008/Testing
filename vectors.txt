@@ -4,133 +4,114 @@ What is the magnitude of vector v = 3i + 4j
 25
 1
 A
-
 If a = 2i + 3j and b = -i + 4j, what is a + b?
 i + 7j
 3i + 7j
 -i + 7j
 i + j
 A
-
 Find the dot product of a = 2i + 5j and b = 3i - j
 1
 6
 -1
 3
 A
-
 Two vectors are perpendicular if their dot product is
 0
 1
 a scalar
 equal in magnitude
 A
-
 The vector v = 6i - 8j has a magnitude of
 14
 10
 100
 2
 B
-
 What is the unit vector in the direction of v = 5i + 12j
 (5/13)i + (12/13)j
 (12/13)i + (5/13)j
 (13/5)i + (13/12)j
 (5/12)i + (12/5)j
 A
-
 Find the angle between a = i and b = j
 0°
 90°
 180°
 45°
 B
-
 What is the result of 3(2i - j)
 6i - 3j
 6i + j
 2i - 3j
 5i - 2j
 A
-
 A vector with magnitude 1 is called a
 position vector
 unit vector
 zero vector
 direction vector
 B
-
 If a = 4i - 2j and b = i + j, then a - b =
 3i - 3j
 5i - j
 4i + j
 2i - j
 A
-
 Find the scalar projection of a = 3i + 4j onto b = i
 3
 4
 5
 0
 A
-
 If v = 2i - 2j, what is the direction angle of v
 315°
 45°
 135°
 225°
 A
-
 Find the vector projection of a = 2i + 4j onto b = i
 2i
 4j
 (1/5)i
 i
 A
-
 If a vector has a direction of 60° and a magnitude of 2, it can be written as
 2cos(60°)i + 2sin(60°)j
 cos(2)60°i + sin(2)60°j
 2i + 60j
 i + √3j
 A
-
 Which of the following is a scalar?
 Dot product
 Vector projection
 Magnitude
 Both A and C
 D
-
 The dot product of two unit vectors with an angle θ between them is
 cos(θ)
 sin(θ)
 1
 θ
 A
-
 What is the component form of a vector with initial point (1,2) and terminal point (4,6)?
 3i + 4j
 3i + 2j
 5i + 8j
 4i + 6j
 A
-
 If v = -7i + 24j, find the magnitude of v
 25
 17
 31
 18
 A
-
 A zero vector has a magnitude of
 0
 1
 infinity
 undefined
 A
-
 Which vector is perpendicular to v = 3i + 2j?
 2i - 3j
 -2i + 3j

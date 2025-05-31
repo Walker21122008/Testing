@@ -16,7 +16,7 @@ public class CCC2 {
 
       var6.close();
       String[][] var2 = new String[var5][6];
-      var6 = new TextInputFile("C:/projects/Comp Sci 11/Quizchoice.txt");
+      var6 = new TextInputFile("Quizchoice.txt");
       int var7 = 0;
 
       while(!var6.eof()) {

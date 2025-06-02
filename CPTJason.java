@@ -6,9 +6,17 @@ import java.util.Random;
 public class CPTJason {
     public static void main(String[] args) {
         Console con = new Console(1280, 720);
+        
+        BufferedImage imgStartBKG = con.loadImage("Start.png");
         BufferedImage imgHomePageBKG = con.loadImage("Homepage.png");
+        BufferedImage imgWinPageBKG = con.loadImage("Win.png");
+        BufferedImage imgLosePageBKG = con.loadImage("Lose.png");
+        BufferedImage imgChoice1BKG = con.loadImage("Choice1.png");
+        BufferedImage imgChoice2BKG = con.loadImage("Choice2.png");
+        BufferedImage imgChoice3BKG = con.loadImage("Choice3.png");
+        BufferedImage imgUsernameBKG = con.loadImage("Username.png");
         BufferedImage imgHelpBKG = con.loadImage("Help.png");
-        BufferedImage imgScoreBKG = con.loadImage("Score.jpg");
+        BufferedImage imgScoreBKG = con.loadImage("Score.png");
 
         String strName = "";
         int intScore = 0;
@@ -51,10 +59,13 @@ public class CPTJason {
             String selectedQuizFile = "";
             if (intQuizchoice == 1) {
                 selectedQuizFile = "Calc.txt";
+                con.drawImage(imgChoice1BKG, 0, 0);
             } else if (intQuizchoice == 2) {
-                selectedQuizFile = "Vectors.txt";
+				selectedQuizFile = "Vectors.txt";
+				con.drawImage(imgChoice2BKG, 0, 0);
             } else if (intQuizchoice == 3) {
                 selectedQuizFile = "Both.txt";
+                con.drawImage(imgChoice3BKG, 0, 0);
             }
 
             TextInputFile quiz = new TextInputFile(selectedQuizFile);
@@ -65,6 +76,8 @@ public class CPTJason {
             }
             quiz.close();
             intNumQuestions = intNumQuestions / 6;
+            
+            
 
             String[][] strQuiz = new String[intNumQuestions][6];
             TextInputFile quiz2 = new TextInputFile(selectedQuizFile);
@@ -93,6 +106,7 @@ public class CPTJason {
                 con.print("Enter your answer (A/B/C/D): ");
                 strAnswer = con.readLine().toUpperCase();
 
+				 
                 if (strAnswer.equals(strQuiz[i][5].toUpperCase())) {
                     intScore++;
                 }

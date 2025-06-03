@@ -17,12 +17,18 @@ public class CPTJason {
         BufferedImage imgUsernameBKG = con.loadImage("Username.png");
         BufferedImage imgHelpBKG = con.loadImage("Help.png");
         BufferedImage imgScoreBKG = con.loadImage("Score.png");
-
+        BufferedImage imgQuizchoiceBKG = con.loadImage("Quizchoice.png");
+        BufferedImage imgJokesBKG = con.loadImage("Jokes.png");
+        
         String strName = "";
         int intScore = 0;
         String strAnswer = "";
         String strCheat = "statitan";
         int intQuizchoice = 0;
+
+
+
+
 
         con.drawImage(imgHomePageBKG, 0, 0);
         con.println("Calc and Vectors Multiple Choice Game");
@@ -30,9 +36,11 @@ public class CPTJason {
         con.println("Press V to view High Scores");
         con.println("Press H for help options");
         con.println("Press Q to exit");
+        con.println("try pressing j"); 
         String strInput = con.readLine();
 
         if (strInput.equalsIgnoreCase("p")) {
+			con.drawImage(imgUsernameBKG, 0, 0);
             con.println("Enter your username: ");
             strName = con.readLine();
             while (strName.equals("")) {
@@ -49,10 +57,11 @@ public class CPTJason {
             for (int i = 0; i < 3; i++) {
                 strQuizchoices[i] = file.readLine();
             }
-
+			 con.drawImage(imgQuizchoiceBKG, 0, 0);
             con.println("Please choose a quiz to complete:");
             for (int i = 0; i < 3; i++) {
                 con.println((i + 1) + ") " + strQuizchoices[i]);
+                
             }
             intQuizchoice = con.readInt();
 
@@ -67,7 +76,7 @@ public class CPTJason {
                 selectedQuizFile = "Both.txt";
                 con.drawImage(imgChoice3BKG, 0, 0);
             }
-
+			con.clear();
             TextInputFile quiz = new TextInputFile(selectedQuizFile);
             int intNumQuestions = 0;
             while (!quiz.eof()) {
@@ -97,6 +106,7 @@ public class CPTJason {
             }
 
             for (int i = 0; i < intNumQuestions; i++) {
+				con.clear(); 
                 con.println();
                 con.println("Q" + (i + 1) + ": " + strQuiz[i][0]);
                 con.println("A) " + strQuiz[i][1]);
@@ -116,7 +126,8 @@ public class CPTJason {
             con.println(strName + ", your final score is: " + intScore + "/" + intNumQuestions);
 
         } else if (strInput.equalsIgnoreCase("v")) {
-            con.println("High scores not implemented.");
+		con.println("Not done"); 
+            
         } else if (strInput.equalsIgnoreCase("h")) {
             con.drawImage(imgHelpBKG, 0, 0);
             con.println("Help Section:");
@@ -126,6 +137,9 @@ public class CPTJason {
             con.println("- Use 'statitan' as a cheat code for bonus points!");
         } else if (strInput.equalsIgnoreCase("q")) {
             con.println("Thanks for playing!");
+        }else if (strInput.equalsIgnoreCase("j")) {
+			con.clear(); 
+			con.drawImage(imgJokesBKG, 0, 0);
         } else {
             con.println("Invalid choice. Restart the program.");
         }

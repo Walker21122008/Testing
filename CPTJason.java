@@ -6,7 +6,8 @@ import java.util.Random;
 public class CPTJason {
     public static void main(String[] args) {
         Console con = new Console(1280, 720);
-        
+
+        // Load images
         BufferedImage imgStartBKG = con.loadImage("Start.png");
         BufferedImage imgHomePageBKG = con.loadImage("Homepage.png");
         BufferedImage imgWinPageBKG = con.loadImage("Win.png");
@@ -19,34 +20,34 @@ public class CPTJason {
         BufferedImage imgScoreBKG = con.loadImage("Score.png");
         BufferedImage imgQuizchoiceBKG = con.loadImage("Quizchoice.png");
         BufferedImage imgJokesBKG = con.loadImage("Jokes.png");
-        
+
+        // Game variables
         String strName = "";
         int intScore = 0;
         String strAnswer = "";
         String strCheat = "statitan";
         int intQuizchoice = 0;
+        String quizName = "";
 
-
-
-
-
+        // Main menu
         con.drawImage(imgHomePageBKG, 0, 0);
         con.println("Calc and Vectors Multiple Choice Game");
         con.println("Press P to play game");
         con.println("Press V to view High Scores");
         con.println("Press H for help options");
         con.println("Press Q to exit");
-        con.println("try pressing j"); 
+        con.println("Try pressing J"); 
         String strInput = con.readLine();
 
         if (strInput.equalsIgnoreCase("p")) {
-			con.drawImage(imgUsernameBKG, 0, 0);
+            con.drawImage(imgUsernameBKG, 0, 0);
             con.println("Enter your username: ");
             strName = con.readLine();
             while (strName.equals("")) {
                 con.println("Username cannot be blank. Try again:");
                 strName = con.readLine();
             }
+
             if (strName.equalsIgnoreCase(strCheat)) {
                 intScore = 2;
                 con.println("Cheat enabled! Starting score: " + intScore);
@@ -57,26 +58,28 @@ public class CPTJason {
             for (int i = 0; i < 3; i++) {
                 strQuizchoices[i] = file.readLine();
             }
-			 con.drawImage(imgQuizchoiceBKG, 0, 0);
+
+            con.drawImage(imgQuizchoiceBKG, 0, 0);
             con.println("Please choose a quiz to complete:");
             for (int i = 0; i < 3; i++) {
                 con.println((i + 1) + ") " + strQuizchoices[i]);
-                
             }
             intQuizchoice = con.readInt();
+            quizName = strQuizchoices[intQuizchoice - 1];
 
             String selectedQuizFile = "";
             if (intQuizchoice == 1) {
                 selectedQuizFile = "Calc.txt";
                 con.drawImage(imgChoice1BKG, 0, 0);
             } else if (intQuizchoice == 2) {
-				selectedQuizFile = "Vectors.txt";
-				con.drawImage(imgChoice2BKG, 0, 0);
+                selectedQuizFile = "Vectors.txt";
+                con.drawImage(imgChoice2BKG, 0, 0);
             } else if (intQuizchoice == 3) {
                 selectedQuizFile = "Both.txt";
                 con.drawImage(imgChoice3BKG, 0, 0);
             }
-			con.clear();
+
+            con.clear();
             TextInputFile quiz = new TextInputFile(selectedQuizFile);
             int intNumQuestions = 0;
             while (!quiz.eof()) {
@@ -84,9 +87,7 @@ public class CPTJason {
                 intNumQuestions++;
             }
             quiz.close();
-            intNumQuestions = intNumQuestions / 6;
-            
-            
+            intNumQuestions /= 6;
 
             String[][] strQuiz = new String[intNumQuestions][6];
             TextInputFile quiz2 = new TextInputFile(selectedQuizFile);
@@ -96,7 +97,7 @@ public class CPTJason {
                 }
             }
 
-            // Shuffle
+            // Shuffle questions
             Random random = new Random();
             for (int i = 0; i < intNumQuestions; i++) {
                 int randIndex = random.nextInt(intNumQuestions);
@@ -106,8 +107,7 @@ public class CPTJason {
             }
 
             for (int i = 0; i < intNumQuestions; i++) {
-				con.clear(); 
-                con.println();
+                con.clear();
                 con.println("Q" + (i + 1) + ": " + strQuiz[i][0]);
                 con.println("A) " + strQuiz[i][1]);
                 con.println("B) " + strQuiz[i][2]);
@@ -116,7 +116,6 @@ public class CPTJason {
                 con.print("Enter your answer (A/B/C/D): ");
                 strAnswer = con.readLine().toUpperCase();
 
-				 
                 if (strAnswer.equals(strQuiz[i][5].toUpperCase())) {
                     intScore++;
                 }
@@ -125,9 +124,62 @@ public class CPTJason {
             con.drawImage(imgScoreBKG, 0, 0);
             con.println(strName + ", your final score is: " + intScore + "/" + intNumQuestions);
 
+            // Save score
+            TextOutputFile writer = new TextOutputFile("/Users/jasonguan/Documents/GitHub/JasonGuan-afk-Cpt/HighScore.txt", true);
+            writer.println(strName + "," + quizName + "," + intScore);
+            writer.close();
+
         } else if (strInput.equalsIgnoreCase("v")) {
-		con.println("Not done"); 
-            
+            TextInputFile scoreReader = new TextInputFile("/Users/jasonguan/Documents/GitHub/JasonGuan-afk-Cpt/HighScore.txt");
+
+            // Read scores
+            String[] names = new String[100];
+            String[] quizzes = new String[100];
+            int[] scores = new int[100];
+            int count = 0;
+
+            while (!scoreReader.eof()) {
+                String line = scoreReader.readLine();
+                if (line != null && !line.equals("")) {
+                    String[] parts = line.split(",");
+                    if (parts.length == 3) {
+                        names[count] = parts[0];
+                        quizzes[count] = parts[1];
+                        scores[count] = Integer.parseInt(parts[2]);
+                        count++;
+                    }
+                }
+            }
+
+            // Bubble sort by score descending
+            for (int i = 0; i < count - 1; i++) {
+                for (int j = 0; j < count - i - 1; j++) {
+                    if (scores[j] < scores[j + 1]) {
+                        // Swap scores
+                        int tempScore = scores[j];
+                        scores[j] = scores[j + 1];
+                        scores[j + 1] = tempScore;
+
+                        // Swap names
+                        String tempName = names[j];
+                        names[j] = names[j + 1];
+                        names[j + 1] = tempName;
+
+                        // Swap quizzes
+                        String tempQuiz = quizzes[j];
+                        quizzes[j] = quizzes[j + 1];
+                        quizzes[j + 1] = tempQuiz;
+                    }
+                }
+            }
+
+            // Display
+            con.clear();
+            con.println("=== High Scores ===");
+            for (int i = 0; i < count && i < 10; i++) {
+                con.println((i + 1) + ". " + names[i] + " | " + quizzes[i] + " | " + scores[i]);
+            }
+
         } else if (strInput.equalsIgnoreCase("h")) {
             con.drawImage(imgHelpBKG, 0, 0);
             con.println("Help Section:");
@@ -137,9 +189,9 @@ public class CPTJason {
             con.println("- Use 'statitan' as a cheat code for bonus points!");
         } else if (strInput.equalsIgnoreCase("q")) {
             con.println("Thanks for playing!");
-        }else if (strInput.equalsIgnoreCase("j")) {
-			con.clear(); 
-			con.drawImage(imgJokesBKG, 0, 0);
+        } else if (strInput.equalsIgnoreCase("j")) {
+            con.clear();
+            con.drawImage(imgJokesBKG, 0, 0);
         } else {
             con.println("Invalid choice. Restart the program.");
         }
